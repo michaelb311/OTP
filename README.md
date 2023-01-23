@@ -11,7 +11,7 @@ To run this app, you will need the following:
 - A Google Developers Console account and a project with the Google+ API enabled
 - A Postgres database
 
-#INSTALLATION 
+# INSTALLATION 
 
 To install this app, follow these steps:
 
@@ -44,6 +44,6 @@ MAILGUN_DOMAIN: The domain name for your mailgun account
 Run the app using 
   npm run dev
 
-#USAGE
+# USAGE
 
 To use this app, visit http://localhost:3000 in a web browser. You will be able to log in using your Google account and presented a Two Factor Authentication form in order to have access to the data that is stored in the Postgres database.
