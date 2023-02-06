@@ -1,25 +1,24 @@
-require('dotenv').config();
-const {Sequelize, DataTypes} = require('sequelize');
+require('dotenv').config()
+const { Sequelize, DataTypes } = require('sequelize')
 
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-    host: 'localhost',
-    dialect: 'postgres',
+  host: 'localhost',
+  dialect: 'postgres',
 });
-
 
 const MissingPerson = sequelize.define('missing_person', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
+        autoIncrement: true
     },
     firstName: {
         type: Sequelize.VARCHAR(100),
-        allowNull: false,
+        allowNull: false
     },
     lastName: {
         type: Sequelize.VARCHAR(140),
-        allowNull: false,
+        allowNull: false
     },
     primaryEthnicity: {
         type: Sequelize.ENUM({
@@ -59,7 +58,7 @@ const MissingPerson = sequelize.define('missing_person', {
     },
     photo: {
         type: Sequelize.VARCHAR(255),
-        allowNull: true,
+        allowNull: true
     },
     gender: {
         type: Sequelize.ENUM({
@@ -69,17 +68,17 @@ const MissingPerson = sequelize.define('missing_person', {
                 Sequelize.VARCHAR(30)
             ]
         }),
-        allowNull: false,
+        allowNull: false
     },
     lastSeenTime: {
         type: DataTypes.TIME,
         defaultValue: DataTypes.NOW,
-        allowNull: false,
+        allowNull: false
     },
     lastSeenPlace: {
         type: DataTypes.GEOGRAPHY,
-        allowNul: false,
+        allowNul: false
     }
 });
 
-module.exports = UserOTPVerification;
+module.exports = MissingPerson;
