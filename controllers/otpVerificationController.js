@@ -1,8 +1,8 @@
-require('../../middleware/passport');
+require('../middleware/passport');
 const bcrypt = require('bcrypt');
-const pool = require('../../config/db');
-const checkOTPQuery = require('../../models/otp-verification/checkOTPQuery');
-const {verifyUserQuery} = require('../../models/user-verification/updateVerifiedUserQuery');
+const pool = require('../config/db');
+const checkOTPQuery = require('../models/otp-verification/checkOTPQuery');
+const {verifyUserQuery} = require('../models/user-verification/updateVerifiedUserQuery');
 
 const sendOTPForm = (req, res) => {
     res.send(`<p>'One Time Password sent to your email!'</p>

@@ -43,6 +43,22 @@ pool.connect((err, pool, release) => {
   //   });
   // };
 
+  // const createSessionTableQuery = 'CREATE TABLE user_sessions ( id SERIAL PRIMARY KEY, sid VARCHAR(255) NOT NULL UNIQUE, sess JSON NOT NULL,  expire TIMESTAMP NOT NULL DEFAULT NOW() + INTERVAL \'1 day\')';
+
+  // if (err) {
+  //   return console.error('Error acquiring client', err.stack);
+  // } else {
+  //   pool.query(createSessionTableQuery, (err, res) => {
+  //     if (err) {
+  //       if (err.message.includes('table already exists') || err.code === '42P07') {
+  //         console.log('otp table already exists');
+  //       } else {
+  //         console.log(err.stack);
+  //       }
+  //     }
+  //   });
+  // };
+
   console.log('Connected to database');
 });
 
