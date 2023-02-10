@@ -2,7 +2,7 @@ require('../../middleware/passport');
 const bcrypt = require('bcrypt');
 const pool = require('../../config/db');
 const checkOTPQuery = require('../../models/otp-verification/checkOTPQuery');
-const updateVerifiedUserQuery = require('../../models/user-verification/updateVerifiedUserQuery');
+const {verifyUserQuery} = require('../../models/user-verification/updateVerifiedUserQuery');
 
 const sendOTPForm = (req, res) => {
     res.send(`<p>'One Time Password sent to your email!'</p>
@@ -32,11 +32,11 @@ const verifyOTP = (req, res) => {
                 }
                 if (isMatch) {
 
-                    pool.query(updateVerifiedUserQuery, [googleid], (err, result) => {
+                    pool.query(verifyUserQuery, [googleid], (err, result) => {
                     if (err) {
                         throw Error(err);
                     } else {
-                        res.status(200).send('OTP verified!');
+                        res.status(200).redirect('/');
                     }
                     });
                 } else {

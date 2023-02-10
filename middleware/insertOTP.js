@@ -5,7 +5,7 @@ const newOTPValues = require('../models/otp-verification/newOTPValues');
 const checkOTPQuery = require('../models/otp-verification/checkOTPQuery');
 const insertNewOTPQuery = require('../models/otp-verification/insertNewOTPQuery');
 
-const updateOTP = async (newOTP, googleid, displayName) => {
+const insertOTP = async (newOTP, googleid, displayName) => {
     const {hashedOTP} = newOTP;
     const newOTPValuesObject = newOTPValues(googleid, hashedOTP);
     try {
@@ -27,4 +27,4 @@ const updateOTP = async (newOTP, googleid, displayName) => {
 
 }
 
-module.exports = updateOTP;
+module.exports = insertOTP;
