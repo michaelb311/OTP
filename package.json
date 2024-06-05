@@ -20,6 +20,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "mailchimp": "^1.2.1",
     "mailgun-js": "^0.22.0",
     "passport": "^0.6.0",
     "passport-google-oauth2": "^0.2.0",

@@ -20,6 +20,14 @@ const MissingPerson = sequelize.define('missing_person', {
         type: Sequelize.VARCHAR(140),
         allowNull: false
     },
+    dob:{
+        type: DataTypes.DATE,
+        allowNull: false
+    },
+    age: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
     primaryEthnicity: {
         type: Sequelize.ENUM({
             values: [
